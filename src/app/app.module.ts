@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { FacturaGateway } from './domain/gateways/factura.gateway';
 import { FacturaHttpService } from './infrastructure/facturas.service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -16,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: FacturaGateway, useClass: FacturaHttpService }

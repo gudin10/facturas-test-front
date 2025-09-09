@@ -28,7 +28,7 @@ import { CrearFacturaDto } from 'src/app/core/models/factura.model';
     MatButtonModule,
     MatIconModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
   ],
   templateUrl: './crear-factura.component.html',
   styleUrls: ['./crear-factura.component.css']
