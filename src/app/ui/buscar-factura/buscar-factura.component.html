@@ -1,28 +1,32 @@
 <mat-card class="p-4">
   <mat-card-title>Búsqueda de Facturas</mat-card-title>
 
-  <div class="flex gap-4 my-4">
-    <mat-radio-group formControlName="tipoBusqueda">
-      <mat-radio-button value="cliente">Cliente</mat-radio-button>
-      <mat-radio-button value="numero">Número Factura</mat-radio-button>
-    </mat-radio-group>
-  </div>
+  <!-- 👇 Aquí agregamos el formGroup -->
+  <form [formGroup]="form">
 
-  <div class="flex gap-4 my-4">
-    <mat-form-field class="w-1/2" appearance="outline">
-      <mat-label>Cliente</mat-label>
-      <mat-select formControlName="idCliente">
-        <mat-option *ngFor="let c of clientes" [value]="c.id">{{ c.razonSocial }}</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div class="flex gap-4 my-4">
+      <mat-radio-group formControlName="tipoBusqueda">
+        <mat-radio-button value="cliente">Cliente</mat-radio-button>
+        <mat-radio-button value="numero">Número Factura</mat-radio-button>
+      </mat-radio-group>
+    </div>
 
-    <mat-form-field class="w-1/2" appearance="outline">
-      <mat-label>Número de Factura</mat-label>
-      <input matInput formControlName="numeroFactura" type="number">
-    </mat-form-field>
-  </div>
+    <div class="flex gap-4 my-4">
+      <mat-form-field class="w-1/2" appearance="outline">
+        <mat-label>Cliente</mat-label>
+        <mat-select formControlName="idCliente">
+          <mat-option *ngFor="let c of clientes" [value]="c.id">{{ c.razonSocial }}</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="buscar()">Buscar</button>
+      <mat-form-field class="w-1/2" appearance="outline">
+        <mat-label>Número de Factura</mat-label>
+        <input matInput formControlName="numeroFactura" type="number">
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" (click)="buscar()">Buscar</button>
+  </form>
 
   <table mat-table [dataSource]="facturas" class="w-full mt-4">
     <ng-container matColumnDef="numeroFactura">
