@@ -1,0 +1,39 @@
+/* Barra superior */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1976d2; /* azul tipo Material */
+  padding: 10px 20px;
+  color: white;
+  font-size: 18px;
+}
+
+/* Título */
+.navbar-title {
+  font-weight: bold;
+}
+
+/* Links */
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 16px;
+  transition: opacity 0.3s;
+}
+
+.navbar-links a:hover {
+  opacity: 0.8;
+}
+
+/* Link activo */
+.active-link {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Contenido principal */
+.content {
+  padding: 20px;
+}
